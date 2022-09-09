@@ -19,7 +19,7 @@ function Timer() {
        },1000):null
         return ()=>clearInterval(timer)
     })
-    function restart(){
+    function stop(){
         setMinutes(0)
         setSeconds(0)
         setIsStarted(false)
@@ -30,7 +30,7 @@ function Timer() {
         <div className={'timer'}>
             <button type="button" className={`${isStarted?"pause":"start"} start-pause`} onClick={startPause}>{isStarted?"Pause":"Start"}</button>
             <h1>{minutes<10?"0"+minutes:minutes}:{seconds<10?"0"+seconds:seconds}</h1>
-            <button type="button" className="restart" disabled={isStarted?"":"auto"} onClick={restart}>Restart</button>
+            <button type="button" className="restart" disabled={isStarted?"":"auto"} onClick={stop}>Stop</button>
         </div>
     );
 }
